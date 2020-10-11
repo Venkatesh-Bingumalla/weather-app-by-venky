@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <title>
+        Weather App by venky
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- Animation cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+
+
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>Find Weather</h1>
+        <form method="GET">
+            <input class="fas-fa-search" class="border border-dark" type="text" name="city" id="city" placeholder="city...">
+            <input class="btn btn-dark btn-sm" type="submit" value="submit">
+
+        </form>
+
+    </div>
+    {%if m%}
+    <div id="back"></div>
+    <div id="front"></div>
+    <div class="animate__animated animate__zoomInDown alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <p style="text-align:center;"> {% for mess in messages%} ({{mess}}) {%endfor%}</p>
+    </div>
+
+    {%endif%} {%if f%}
+    <div class="row justify-content-center animate__animated animate__zoomInDown">
+        <div class="card col-10 col-lg-8 bg-primary">
+            <div class="card-header" style="text-align:center">
+                <img src="http://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png">
+            </div>
+            <div class="card-body" style="text-align:center">
+                <h2>{{reg}}</h2>
+                <h1>{{temp}}<sup>0C</sup></h1>
+                <h4>{{climate}}</h4>
+                <h4>{{datetime}}</h4>
+
+            </div>
+
+        </div>
+    </div>
+    {%endif%}
+    <footer style="text-align:center;bottom:0;position:absolute;height:2.5rem;width:100%;" class="footer bg-light justify-content-center;">
+        <div>
+            &copy2020 Copyright : <a href="https://portfolio-venky-bingumalla.herokuapp.com/">Venkatesh Bingumalla</a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
